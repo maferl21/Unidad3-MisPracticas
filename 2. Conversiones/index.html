@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <title>Conversiones</title>
+</head>
+<body>
+    <div class="fijo">
+        <nav>
+            <ul>
+                <li><a href=" ">Principal</a></li>
+                <li><a href="../index.html">Portada</a></li>
+                <li><a href="../1. Par e Impar/index.html">Par e Impar</a></li>
+                <li><a class="active" href=" ">Conversiones</a></li>
+                <li><a href="../3. abrir pagina/index.html">Abrir p&aacute;gina</a></li>
+                <li><a href="../4. ExamnTablasMult/index.html">Tabla de Mult</a></li>
+                <li><a href="../5. ZodiacoinnerHTML/index.html">Signo Zodiacal</a></li>
+                <li><a href="../6. ValidaDOMNumeroEnlaces/index.html">N&uacute;m Enlaces</a></li>
+                <li><a href="../7. Muestra-OcultaParrafos-v2/index.html">Muestra-Oculta Parrafos</a></li>
+                <li><a href="../8. AdivinaNumero/index.html">Adivina n&uacute;mero</a></li>
+            </ul>
+        </nav>
+     </div>
+    
+    <div id="contenedor">
+        <h1>Conversiones de Decimal a Binario | Decimal a Hexadecimal</h1>
+        <form>
+            <label>Introduce el numero</label>
+            <input type="text" id="num" name="numero" value="">
+            <!--
+                <button type="button" onclick="esPar(numero.value)">Verificar</button>
+                -->
+            <button type="button" onclick="mostrarBinario(num.value)">Binario</button>
+            <button type="button" onclick="mostrarHexa(num.value)">Hexadecimal</button>
+            <button type="button" onclick="limpiar()">Limpiar Todos</button>
+        </form>
+    </div>
+    
+
+    <script type="text/javascript">
+        function limpiar(){
+            lista=document.querySelectorAll('p');
+            if(lista.length!=0){
+                i=lista.length-1;  // posiciona en el último párrafo creado
+                while(i>-1)
+                    lista[i].parentNode.removeChild(lista[i--]);
+            }
+            else alert("No hay parrafos a eliminar");
+        }
+    
+        function mostrarBinario(numero){
+             parrafo = document.createElement("p");
+             contenido = document.createTextNode("El número "+numero+" en Binario es "+binario(numero));  
+             parrafo.appendChild(contenido);
+             document.body.appendChild(parrafo);
+             document.getElementById("num").value="";
+        }
+        function mostrarHexa(numero){
+            parrafo = document.createElement("p");
+            contenido = document.createTextNode("El número "+numero+" en Hexadecimal es "+hexa(numero));  
+            parrafo.appendChild(contenido);
+            document.body.appendChild(parrafo);
+            document.getElementById("num").value="";
+        }
+
+        function binario(numero) {
+            var r="";
+            var n = parseInt(numero,10);
+            while(n!=0){
+                res = n %2;
+                n=Math.trunc(n/2);
+                r=""+res+r;
+            }
+            return r;
+        }
+        function hexa(numero){
+            var res, c;
+            var salida="";
+            while (numero>0){
+                res=numero%16;
+                if(res>9)
+                    salida=""+calcResiduo(res)+salida;
+                else 
+                    salida=""+res+salida;
+                numero=Math.trunc(numero/16);
+                c++;
+            }
+            return salida;
+        }
+
+        function calcResiduo(res){
+            switch (res){
+                case 10: return 'A';
+                case 11: return 'B';
+                case 12: return 'C';
+                case 13: return 'D';
+                case 14: return 'E';
+                case 15: return 'F';
+            }
+        }
+    </script>
+</body>
+</html>

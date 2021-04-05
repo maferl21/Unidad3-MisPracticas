@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversiones</title>
+</head>
+<body>s
+    <h1>Conversiones de Decimal a Hexadecimal</h1>
+    <form >
+        <label >Introduce el numero</label>
+        <input type="text"   id="num" name="numero" value="">
+        <!--
+        <button type="button" onclick="esPar(numero.value)">Verificar</button>
+        -->
+        <button type="button" onclick="mostrarHexa(num.value)">Convertir</button>
+        <button type="button" onclick="limpiar()">Limpiar Todos</button>
+        <input type="button" onClick="cierra()" value="Cerrar"/>
+    </form>
+
+    <script type="text/javascript">
+        function mostrarHexa(numero){
+            parrafo = document.createElement("p");
+            contenido = document.createTextNode("El número "+numero+" en Hexadecimal es "+hexa(numero));  
+            parrafo.appendChild(contenido);
+            document.body.appendChild(parrafo);
+            document.getElementById("num").value="";
+        }
+
+        function hexa(numero){
+            var res, c;
+            var salida="";
+            while (numero>0){
+                res=numero%16;
+                if(res>9)
+                    salida=""+calcResiduo(res)+salida;
+                else 
+                    salida=""+res+salida;
+                numero=Math.trunc(numero/16);
+                c++;
+            }
+            return salida;
+        }
+
+        function calcResiduo(res){
+            switch (res){
+                case 10: return 'A';
+                case 11: return 'B';
+                case 12: return 'C';
+                case 13: return 'D';
+                case 14: return 'E';
+                case 15: return 'F';
+            }
+        }
+        function limpiar(){
+            lista=document.querySelectorAll('p');
+            if(lista.length!=0){
+                i=lista.length-1;  // posiciona en el último párrafo creado
+                while(i>-1)
+                    lista[i].parentNode.removeChild(lista[i--]);
+            }
+            else alert("No hay parrafos a eliminar");
+        }
+        function cierra(){
+            if (confirm("¿Seguro que quieres cerrar la ventana?")){
+                window.close();
+            }
+	    }
+    </script>
+</body>
+</html>

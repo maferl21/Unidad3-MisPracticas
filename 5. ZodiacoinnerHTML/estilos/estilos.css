@@ -1,0 +1,52 @@
+body{
+    background: url(../img/fondo.jpg);
+    background-size: 100%;
+}
+
+/*************** INICIO MENU*/
+nav{
+    background-color: #0c555e;
+    text-align: center;
+}
+nav ul{
+    list-style: none; /*Eliminar biñetas de la listas*/
+    margin: 0;
+    padding: 0;
+}
+nav ul li a{
+    color: rgb(255, 255, 255); /*color de letras*/
+    font-weight: 1000; /*en negritas*/
+    display: block; /* Para que lo haga bloque o al tamaño del padding*/
+    padding: 11px;
+    text-decoration: none; /* Sin subrayado*/
+}
+a.active{
+    background-color: rgb(224, 42, 72);
+    color:  white;
+}
+nav li a:hover{
+    background-color: #dbdbdb4f;
+    color: white;
+}
+nav ul li{
+    display: inline-block; /*Para que las palabras esten seguiditas*/
+}
+/*************** FIN MENU*/
+
+p{
+    color: rgb(0, 0, 0);
+    font-size: 140%;
+}
+#boton{
+    font-size: 15px;
+    background: linear-gradient(50deg,rgb(105, 61, 92),rgb(185, 61, 216));
+    color: white;
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#boton:hover{
+    background: linear-gradient(50deg,rgb(185, 61, 216), rgb(105, 61, 92));
+}

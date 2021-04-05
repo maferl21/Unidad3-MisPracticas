@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<!--
+Solución al ejercicio de "Examen de las Tablas de Multiplicar"
+-->
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/b965409e0d.js" crossorigin="anonymous"></script>
+	<title>Examen de Tablas de Multiplicar</title>
+</head>
+	<body>
+		<script language="javascript" src="js/varios.js"></script>
+		
+		<div class="fijo">
+			<nav>
+				<ul>
+					<li><a href=" ">Principal</a></li>
+					<li><a href="../index.html">Portada</a></li>
+					<li><a href="../1. Par e Impar/index.html">Par e Impar</a></li>
+					<li><a href="../2. Conversiones/index.html">Conversiones</a></li>
+					<li><a href="../3. abrir pagina/index.html">Abrir p&aacute;gina</a></li>
+					<li><a class="active" href=" ">Tabla de Mult</a></li>
+					<li><a href="../5. ZodiacoinnerHTML/index.html">Signo Zodiacal</a></li>
+					<li><a href="../6. ValidaDOMNumeroEnlaces/index.html">N&uacute;m Enlaces</a></li>
+					<li><a href="../7. Muestra-OcultaParrafos-v2/index.html">Muestra-Oculta Parrafos</a></li>
+					<li><a href="../8. AdivinaNumero/index.html">Adivina n&uacute;mero</a></li>
+				</ul>
+			</nav>
+		 </div>
+		
+		<div id="contenedor">
+			<form>
+				Selecciona que n&uacute;mero de tabla
+				<select name="opTabla" id="opTabla">
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+					<option>6</option>
+					<option>7</option>
+					<option>8</option>
+					<option>9</option>
+					<option>10</option>
+				</select>
+		
+				<p><input type="button" value="Realizar Examen"
+						onclick="muestra(opTabla.value, tabla, document.getElementById('contenido'));" />
+					<br />
+				</p>
+		
+				<div id="contenido" style="visibility:hidden">
+					<div id="tab">
+						<table id="tabla" border="2">
+							<thead>
+								<th>Operaci&oacute;n</th>
+								<th>Resultado</th>
+							</thead>
+						</table>					
+					</div>
+					<br>
+					<input type="button" value="Calificar Examen" onclick="califica(opTabla.value, tabla);" />
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,131 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+#cabecera {
+    background: #000000;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+/*************** INICIO MENU*/
+nav{
+    background-color: #0c555e;
+    text-align: center;
+}
+nav ul{
+    list-style: none; /*Eliminar biñetas de la listas*/
+    margin: 0;
+    padding: 0;
+}
+nav ul li a{
+    color: rgb(255, 255, 255); /*color de letras*/
+    font-weight: 1000; /*en negritas*/
+    display: block; /* Para que lo haga bloque o al tamaño del padding*/
+    padding: 11px;
+    text-decoration: none; /* Sin subrayado*/
+}
+a.active{
+    background-color: white;
+    color:  #0c445e;
+}
+nav li a:hover{
+    background-color: rgb(224, 42, 72);
+    color: white;
+}
+nav ul li{
+    display: inline-block; /*Para que las palabras esten seguiditas*/
+}
+/*************** FIN MENU*/
+
+.fijo{
+    position: fixed; /*La posicion va a ser fijo*/
+    width: 100%; /*Tamaño del menu*/
+    top: 0;/*Que este pegado hasta arriba*/
+}
+.contenedor{
+    width: 960px;
+    margin: 15px auto;
+    text-align: center;
+    padding-top: 7rem; 
+}
+table{
+    font-size: 20px;
+}
+#otros th{
+    text-align: right;
+}
+#otros td{
+    text-align: left;
+}
+
+@media (max-width:768px){
+    .contenedor{
+        width: 680px;
+        text-align: center;
+        padding-top: 7rem; 
+    }
+    #enca{ 
+        width: 85%;
+    }
+    img{
+        width: 150px;;
+    }
+    table{
+        font-size: 20px;
+    }
+    #otros th{
+        text-align: right;
+    }
+    #otros td{
+        text-align: left;
+    }
+}
+/********************************/
+#btn-mas{
+    display:none;
+  }
+  .cont{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+  }
+  .cont .redes a, span{
+    display: block;
+    text-decoration: none;
+    background: #19749e;
+    color: white;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 0px 1px 10px rgb(0, 0, 0, 0.4);
+    transition: all 500ms ease;
+  }
+  .cont .redes a span:hover{
+    background: white;
+    color: #008080;
+  }
+  .cont .redes a{
+    margin-bottom: -15px;
+    opacity: 0;
+    visibility: hidden;
+  }
+  #btn-mas:checked~ .redes a{
+    margin-bottom: 10px;
+    opacity: 1;
+    visibility: visible;
+  }
+  #icon-mas2{
+    cursor: pointer;
+    background:#0c445e;
+    font-size: 20px;
+  }
+  #btn-mas:checked~ .btn-mas #icon-mas2{
+    transform: rotate(137deg);
+    font-size: 25px;
+    background: white;
+    color: #0c445e;
+  }
+  /********************************/

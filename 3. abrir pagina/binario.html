@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binario</title>
+</head>
+<body>
+    <h1>Conversiones de Decimal a Binario</h1>
+    <form >
+        <label >Introduce el numero</label>
+        <input type="text"   id="num" name="numero" value="">
+        <!--
+        <button type="button" onclick="esPar(numero.value)">Verificar</button>
+        -->
+        <button type="button" onclick="mostrarBinario(num.value)">Convertir</button>
+        <button type="button" onclick="limpiar()">Limpiar Todos</button>
+        <input type="button" onClick="cierra()" value="Cerrar"/>
+        
+    </form>
+    <script type="text/javascript">
+        function mostrarBinario(numero){
+             parrafo = document.createElement("p");
+             contenido = document.createTextNode("El número "+numero+" en Binario es "+binario(numero));  
+             parrafo.appendChild(contenido);
+             document.body.appendChild(parrafo);
+             document.getElementById("num").value="";
+        }
+        function binario(numero) {
+            var r="";
+            var n = parseInt(numero,10);
+            while(n!=0){
+                res = n %2;
+                n=Math.trunc(n/2);
+                r=""+res+r;
+            }
+            return r;
+        }
+        function limpiar(){
+            lista=document.querySelectorAll('p');
+            if(lista.length!=0){
+                i=lista.length-1;  // posiciona en el último párrafo creado
+                while(i>-1)
+                    lista[i].parentNode.removeChild(lista[i--]);
+            }
+            else alert("No hay parrafos a eliminar");
+        }
+        function cierra(){
+            if (confirm("¿Seguro que quieres cerrar la ventana?")){
+                window.close();
+            }
+        }
+    </script>
+</body>
+</html>

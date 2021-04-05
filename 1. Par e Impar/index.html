@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" type="text/css" href="css/styles.css">
+   <title>Funciones básicas</title>  
+</head>  
+<body>
+   <div class="fijo">
+      <nav>
+          <ul>
+              <li><a href=" ">Principal</a></li>
+              <li><a href="../index.html">Portada</a></li>
+              <li><a class="active" href="">Par e Impar</a></li>
+              <li><a href="../2. Conversiones/index.html">Conversiones</a></li>
+              <li><a href="../3. abrir pagina/index.html">Abrir p&aacute;gina</a></li>
+              <li><a href="../4. ExamnTablasMult/index.html">Tabla de Mult</a></li>
+              <li><a href="../5. ZodiacoinnerHTML/index.html">Signo Zodiacal</a></li>
+              <li><a href="../6. ValidaDOMNumeroEnlaces/index.html">N&uacute;m Enlaces</a></li>
+              <li><a href="../7. Muestra-OcultaParrafos-v2/index.html">Muestra-Oculta Parrafos</a></li>
+              <li><a href="../8. AdivinaNumero/index.html">Adivina n&uacute;mero</a></li>
+          </ul>
+      </nav>
+   </div>
+
+   <div id="contenido">
+      <h1>Programa que verifica si un n&uacute;mero es par</h1>
+      <form>
+         <label>Introduce el numero</label>
+         <input type="text" id="numero" value="">
+         <button type="button" onclick=esPar()>Verificar</button>
+         <br><br>//TAREA:Investigar como hacer para enviar el valor de input text a la funcion esPar
+      </form>
+   </div>
+
+<script type="text/javascript">
+   
+   function esPar(){
+      var par=parseInt(document.getElementById('numero').value);
+      var resultado = parImpar(par);
+       alert("El número "+par+" es "+resultado);  
+    }
+
+function parImpar(par) {
+      if(par % 2 == 0)  return "par";
+      else return "impar";
+ }
+</script>
+</body>
+</html>
